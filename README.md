@@ -13,3 +13,6 @@ You need to follow that design for the interface.
 <-------modules required to run the file---->
 1) pip install captcha
 
+
+<----how to start---->
+run the main.py file
