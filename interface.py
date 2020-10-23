@@ -16,8 +16,9 @@ def login_screen():
     main_screen.config(bg="#ffe6c8")
     main_screen.geometry('700x550')
     main_screen.minsize(400, 300)
+    
     main_screen.title("Text Captcha")
-    #main_screen.wm_iconbitmap("1.icn")
+    
     global l1
     l1 = Label(main_screen, text="Status", bg="#8c8272",fg="white", font=('Times New Roman', 18))
     l1.pack(fill=X,side=TOP)

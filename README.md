@@ -16,3 +16,7 @@ You need to follow that design for the interface.
 
 <----how to start---->
 run the main.py file
+
+<----tip to solve captcha---->
+captcha will be generated as 6 letters
+3rd and 5th letter will be alphabatical and rest all will be numerical
