@@ -14,7 +14,7 @@ def chkauth():
 def login_screen():
     main_screen = Tk()
     main_screen.config(bg="#ffe6c8")
-    main_screen.geometry('700x550')
+    main_screen.geometry('1080x1080')
     main_screen.minsize(400, 300)
     
     main_screen.title("Text Captcha")
@@ -23,13 +23,13 @@ def login_screen():
     l1 = Label(main_screen, text="Status", bg="#8c8272",fg="white", font=('Times New Roman', 18))
     l1.pack(fill=X,side=TOP)
 
-    f1 = Frame(main_screen, bg="#262729", padx="100", pady="150")
+    f1 = Frame(main_screen, bg="#262669", padx="100", pady="150")
     f1.pack()
     global user_var
     global pass_var
     global captcha_var
-    user_var = StringVar(main_screen,value="user name")
-    pass_var = StringVar(main_screen,value="password")
+    user_var = StringVar(main_screen,value="User Name")
+    pass_var = StringVar(main_screen,value="Password")
     captcha_var = StringVar()
 
     user_entry = Entry(f1, textvariable=user_var)
@@ -48,8 +48,6 @@ def login_screen():
     cap_img = PhotoImage(file="cap_img.png")
     Label(f1, image=cap_img).pack(pady="5")
     submit_pic = PhotoImage(file='go_img.png')
-    retry_pic = PhotoImage(file='retry_img.png')
-    Button(f1, fg="black", command=chkauth,image=retry_pic, padx="0", pady="0").pack(side=RIGHT)
     Button(f1, text="Submit", fg="black", command=chkauth,image=submit_pic, padx="0", pady="0").pack(side=BOTTOM)
     
         
