@@ -3,3 +3,8 @@
 -@architnagpal001
 -@naman2001jain
 
+# Required Modules
+-tkinter
+-random
+-captcha
+-
