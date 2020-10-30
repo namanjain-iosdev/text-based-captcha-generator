@@ -9,6 +9,15 @@ def chkauth():
     else:
         l1.configure(background="red",text="invalid")
 
+def refresh():
+    global cap
+    global cap_img
+    global l2
+    global f2
+    cap = captcha_gen()
+    cap_img = PhotoImage(file="cap_img.png")
+    l2=Label(f2, image=cap_img)
+    l2.grid(row=0,column=0,pady="5")
 
 
 def login_screen():
@@ -22,7 +31,7 @@ def login_screen():
     global l1
     l1 = Label(main_screen, text="Status", bg="#8c8272",fg="white", font=('Times New Roman', 18))
     l1.pack(fill=X,side=TOP)
-
+    global f1
     f1 = Frame(main_screen, bg="#262669", padx="100", pady="150")
     f1.pack()
     global user_var
@@ -40,15 +49,21 @@ def login_screen():
     pass_entry.pack(side=TOP,anchor="nw",pady="5")
 
     
-    
+    global captcha_entry
     captcha_entry = Entry(f1, textvariable=captcha_var)
     captcha_entry.pack(side=TOP,pady="5")
     global cap
-    cap = captcha_gen()
-    cap_img = PhotoImage(file="cap_img.png")
-    Label(f1, image=cap_img).pack(pady="5")
+    global l2
+    global cap_img
+    global f2
+    
+    f2=Frame(f1)
+    f2.pack()
+    refresh()
+    
     submit_pic = PhotoImage(file='go_img.png')
     Button(f1, text="Submit", fg="black", command=chkauth,image=submit_pic, padx="0", pady="0").pack(side=BOTTOM)
+    Button(f1, text="refresh", fg="black", command=refresh, padx="0", pady="0").pack(side=BOTTOM)
     
         
 
