@@ -5,9 +5,9 @@ from tkinter import messagebox
 
 def chkauth():
     if str(cap) == str(captcha_var.get()):
-        l1.configure(background="green",text="successful")
+        l1.configure(background="green",text="Successful")
     else:
-        l1.configure(background="red",text="invalid")
+        l1.configure(background="red",text="Invalid")
 
 def refresh():
     global cap
@@ -16,7 +16,7 @@ def refresh():
     global f2
     cap = captcha_gen()
     cap_img = PhotoImage(file="cap_img.png")
-    l2=Label(f2, image=cap_img)
+    l2=Label(f2, image=cap_img,width="186",relief=RIDGE)
     l2.grid(row=0,column=0,pady="5")
 
 
@@ -32,8 +32,8 @@ def login_screen():
     l1 = Label(main_screen, text="Status", bg="#8c8272",fg="white", font=('Times New Roman', 18))
     l1.pack(fill=X,side=TOP)
     global f1
-    f1 = Frame(main_screen, bg="#262669", padx="100", pady="150")
-    f1.pack()
+    f1 = Frame(main_screen, bg="#262669", padx="100", pady="150",relief=SUNKEN)
+    f1.pack(pady="100")
     global user_var
     global pass_var
     global captcha_var
@@ -50,8 +50,6 @@ def login_screen():
 
     
     global captcha_entry
-    captcha_entry = Entry(f1, textvariable=captcha_var)
-    captcha_entry.pack(side=TOP,anchor="nw",pady="5")
     global cap
     global l2
     global cap_img
@@ -60,14 +58,16 @@ def login_screen():
     f2=Frame(f1,bg="#262669")
     f2.pack()
     refresh()
-    
+
+    captcha_entry = Entry(f1, textvariable=captcha_var)
+    captcha_entry.pack(side=TOP,anchor="nw",pady="5")
     f3=Frame(f1,bg="#262669")
     f3.pack(side=TOP)
 
     submit_pic = PhotoImage(file='go_img.png')
     refresh_pic = PhotoImage(file='refresh_img.png')
-    Button(f3, text="Submit", fg="black", command=chkauth,image=submit_pic, padx="0", pady="0").pack(side=LEFT,padx=(0,3))
-    Button(f3, text="refresh", fg="black", command=refresh,image=refresh_pic,height="21",width="24", padx="0", pady="5").pack(side=LEFT)
+    Button(f3, text="Submit", fg="black", command=chkauth,image=submit_pic, padx="0", pady="0",bd="3").pack(side=LEFT,padx=(0,3))
+    Button(f3, text="refresh", fg="black", command=refresh,image=refresh_pic,height="21",width="24", padx="0", pady="5",bd="3").pack(side=LEFT)
     
         
 
