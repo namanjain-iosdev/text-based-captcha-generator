@@ -72,4 +72,3 @@ def login_screen():
         
 
     main_screen.mainloop()
-login_screen()
