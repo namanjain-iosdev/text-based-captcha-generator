@@ -23,7 +23,7 @@ def refresh():
 def login_screen():
     main_screen = Tk()
     main_screen.config(bg="#ffe6c8")
-    main_screen.geometry('1080x1080')
+    main_screen.geometry('800x800')
     main_screen.minsize(400, 300)
     
     main_screen.title("Text Captcha")
@@ -51,20 +51,25 @@ def login_screen():
     
     global captcha_entry
     captcha_entry = Entry(f1, textvariable=captcha_var)
-    captcha_entry.pack(side=TOP,pady="5")
+    captcha_entry.pack(side=TOP,anchor="nw",pady="5")
     global cap
     global l2
     global cap_img
     global f2
     
-    f2=Frame(f1)
+    f2=Frame(f1,bg="#262669")
     f2.pack()
     refresh()
     
+    f3=Frame(f1,bg="#262669")
+    f3.pack(side=TOP)
+
     submit_pic = PhotoImage(file='go_img.png')
-    Button(f1, text="Submit", fg="black", command=chkauth,image=submit_pic, padx="0", pady="0").pack(side=BOTTOM)
-    Button(f1, text="refresh", fg="black", command=refresh, padx="0", pady="0").pack(side=BOTTOM)
+    refresh_pic = PhotoImage(file='refresh_img.png')
+    Button(f3, text="Submit", fg="black", command=chkauth,image=submit_pic, padx="0", pady="0").pack(side=LEFT,padx=(0,3))
+    Button(f3, text="refresh", fg="black", command=refresh,image=refresh_pic,height="21",width="24", padx="0", pady="5").pack(side=LEFT)
     
         
 
     main_screen.mainloop()
+login_screen()
