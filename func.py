@@ -5,12 +5,6 @@ def captcha_img(captcha_text):
     data = image.generate(captcha_text)
     image.write(captcha_text,'cap_img.png')
 
-
-def captcha_img(captcha_text):
-    image=ImageCaptcha()
-    data = image.generate(captcha_text)
-    image.write(captcha_text,'cap_img.png')
-
 def captcha_gen():
     captcha_size=6
     captcha_text=""
