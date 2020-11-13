@@ -8,6 +8,7 @@ def chkauth():
         l1.configure(background="green",text="Successful")
     else:
         l1.configure(background="red",text="Invalid")
+        refresh()
 
 def refresh():
     global cap
