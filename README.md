@@ -1,5 +1,5 @@
 # A Text Based Captcha Generator
-This is Gui based captcha generator which generates the random 6 letter words captcha. 
+This is Gui based captcha generator which generates the random 6 letter words captcha. #captchagenerator #textbasedcaptchagenerator #captchageneratorpython #captchageneratortkinter #captchageneratorusingpythontkinter
 # Contributors
 -@akshaysingh02
 -@architnagpal001
